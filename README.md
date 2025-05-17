@@ -9,15 +9,20 @@ Detection Detects mature crop areas based on HSV color segmentation (yellow-brow
 
 Estimates the percentage of mature grains in the image 
 
+
 🚜 Harvesting Recommendation 
 Automatically assesses if the rice field or grains are ready for harvest 
 
+
 ✅ Displays “Ready” or “Not Ready” based on maturity percentage threshold 
 
+
 🌾 Lightweight & Adaptable 
+
 Designed to work with drone-captured or close-up field images 
 
 Simple and quick to deploy in research or prototype-level automation systems 
+
 
 ## 🔮 Future Enhancements 
 🤖 Integration of Machine Learning (SVM/CNN) for more accurate maturity classification 
