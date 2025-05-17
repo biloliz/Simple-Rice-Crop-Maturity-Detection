@@ -4,6 +4,7 @@ This MATLAB-powered Rice Grain and Crop Maturity Detection system uses basic ima
 
 ## 🔍 Key Features 
 ✅ Automated Image-Based Maturity 
+
 Detection Detects mature crop areas based on HSV color segmentation (yellow-brown hues) 
 
 Estimates the percentage of mature grains in the image 
