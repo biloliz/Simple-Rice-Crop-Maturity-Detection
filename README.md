@@ -8,7 +8,7 @@ Detection Detects mature crop areas based on HSV color segmentation (yellow-brow
 
 Estimates the percentage of mature grains in the image 
 
-## 🚜 Harvesting Recommendation 
+🚜 Harvesting Recommendation 
 Automatically assesses if the rice field or grains are ready for harvest 
 
 ✅ Displays “Ready” or “Not Ready” based on maturity percentage threshold 
