@@ -1,0 +1,35 @@
+clc; clear; close all;
+
+% Step 1: Load input image 
+img = imread('rice_crop.jpg'); %palitan nalang file name)
+figure, imshow(img); title('Original Image');
+
+% Step 2: Convert image to HSV color space
+hsvImg = rgb2hsv(img);
+H = hsvImg(:,:,1);
+S = hsvImg(:,:,2);
+V = hsvImg(:,:,3);
+
+% Step 3: Define HSV thresholds for mature (yellow-brown) crops
+% Hue for yellow-brown ~ [0.1 to 0.15]
+% Saturation and Value for better detection
+matureMask = (H >= 0.1 & H <= 0.15) & (S >= 0.3 & S <= 1) & (V >= 0.3);
+
+% Step 4: Clean mask using morphological operations
+matureMask = imopen(matureMask, strel('disk', 3));
+
+% Step 5: Calculate maturity percentage
+totalPixels = numel(matureMask);
+maturePixels = sum(matureMask(:));
+maturityPercent = (maturePixels / totalPixels) * 100;
+
+% Step 6: Display result
+figure, imshow(matureMask); title('Detected Mature Crop Area');
+fprintf('Estimated Maturity Level: %.2f%%\n', maturityPercent);
+
+% Step 7: Simple Decision
+if maturityPercent > 60
+    disp('Ready for Harvest ✅');
+else
+    disp('Not Yet Ready ❌');
+end
